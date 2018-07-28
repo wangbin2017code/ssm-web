@@ -12,18 +12,11 @@ import com.wangbin.service.IPersonService;
 @Service("personService")
 public class PersonServiceImpl implements IPersonService {
 
+	@Autowired
 	private PersonMapper personMapper;
 
-    public PersonMapper getPersonMapper() {
-        return personMapper;
-    }
-    @Autowired
-    public void setPersonMapper(PersonMapper personMapper) {
-        this.personMapper = personMapper;
-    }
-
     @Override
-    public List<Person> loadPersons() {
+    public List<Person> loadPersons() { 
         return personMapper.queryAll();
     }
 }
